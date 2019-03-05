@@ -16,7 +16,7 @@ trait ModelSettingsComponent[A <: ModelFormat[Array[String], A]] extends Compone
     val line =
       m.optionalSectionValue[ModelSettings](componentName)
         .map(s => if (s.snapToGrid) "1" else "0")
-        .getOrElse("1")
+        .getOrElse("0")
     Array(line)
   }
   def validationErrors(m: Model): Option[String] = None
